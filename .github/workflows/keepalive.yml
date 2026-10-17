@@ -1,0 +1,11 @@
+name: keepalive
+# Réveille le site toutes les 10 minutes pour éviter la mise en veille (offre gratuite Render)
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS -m 60 -o /dev/null https://igs-securite.onrender.com/ || true

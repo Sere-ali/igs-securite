@@ -17,8 +17,8 @@
       intro.className = 'intro';
       intro.innerHTML = '<div class="intro-in"><img src="' + B + '/assets/icons/icon-192.png" alt="" width="92" height="92"><span class="intro-bar"></span></div>';
       document.body.appendChild(intro);
-      var done = function () { intro.classList.add('out'); setTimeout(function () { intro.remove(); }, 800); };
-      setTimeout(done, 1100);
+      var done = function () { intro.classList.add('out'); setTimeout(function () { intro.remove(); }, 400); };
+      setTimeout(done, 500);
     }
   } catch (e) {}
 
@@ -139,7 +139,7 @@
     el.textContent = '0' + suf; requestAnimationFrame(step);
   }
   var counters = $$('.hero-badges strong');
-  if (counters.length) setTimeout(function () { counters.forEach(countUp); }, 2300);
+  if (counters.length) setTimeout(function () { counters.forEach(countUp); }, 1100);
 
   /* Bande défilante */
   var strip = $('.strip'), sIn = strip && $('.strip-in', strip);

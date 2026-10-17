@@ -2,17 +2,17 @@
 .scroll-bar{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--grad);z-index:200;box-shadow:0 0 12px rgba(232,185,35,.8);pointer-events:none}
 
 /* Intro */
-.intro{position:fixed;inset:0;z-index:999;background:#0a0a0a;display:grid;place-items:center;transition:opacity .6s ease .1s,visibility .6s ease .1s}
+.intro{position:fixed;inset:0;z-index:999;background:#0a0a0a;display:grid;place-items:center;transition:opacity .3s ease,visibility .3s ease}
 .intro.out{opacity:0;visibility:hidden}
 .intro-in{text-align:center;color:var(--gold)}
 .intro-in img{width:92px;height:auto;border-radius:18px;box-shadow:0 0 0 1px rgba(232,185,35,.4),0 0 50px rgba(232,185,35,.35);animation:introPop .9s cubic-bezier(.2,.9,.3,1.2) both}
 .intro-bar{display:block;width:140px;height:3px;margin:22px auto 0;border-radius:3px;background:rgba(255,255,255,.1);overflow:hidden}
-.intro-bar::after{content:"";display:block;height:100%;width:100%;background:var(--grad);transform:translateX(-100%);animation:introBar 1s ease forwards .1s}
+.intro-bar::after{content:"";display:block;height:100%;width:100%;background:var(--grad);transform:translateX(-100%);animation:introBar .5s ease forwards}
 @keyframes introPop{from{opacity:0;transform:scale(.6) rotate(-6deg)}to{opacity:1;transform:none}}
 @keyframes introBar{to{transform:none}}
 
 /* Transition de page */
-html.anim body{animation:pageIn .6s ease both}
+html.anim body{animation:pageIn .25s ease both}
 html.anim body.leaving{opacity:0;transition:opacity .22s ease}
 @keyframes pageIn{from{opacity:0}to{opacity:1}}
 
@@ -43,18 +43,18 @@ html.anim .sec-head.reveal.in h2::after{transform:scaleX(1)}
 
 /* HERO */
 .hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
-html.anim .hero h1 .w{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-50deg);transform-origin:50% 100%;animation:wordIn .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.12s + .9s)}
+html.anim .hero h1 .w{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-50deg);transform-origin:50% 100%;animation:wordIn .6s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.07s + .2s)}
 html.anim .hero h1 .gold-line{opacity:0;animation:fadeUp .9s ease forwards 1.5s}
 html.anim .hero .eyebrow,html.anim .hero .lead,html.anim .hero .cta-row,html.anim .hero .hero-badges{opacity:0;animation:fadeUp .9s ease forwards}
-html.anim .hero .eyebrow{animation-delay:.7s}
-html.anim .hero .lead{animation-delay:1.7s}
-html.anim .hero .rotator{opacity:0;animation:fadeUp .9s ease forwards 1.85s}
-html.anim .hero .cta-row{animation-delay:2s}
-html.anim .hero .hero-badges{animation-delay:2.2s}
+html.anim .hero .eyebrow{animation-delay:.1s}
+html.anim .hero .lead{animation-delay:.6s}
+html.anim .hero .rotator{opacity:0;animation:fadeUp .9s ease forwards .7s}
+html.anim .hero .cta-row{animation-delay:.8s}
+html.anim .hero .hero-badges{animation-delay:.95s}
 @keyframes wordIn{to{opacity:1;transform:none}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 /* reflet doré sur le sous-titre */
-html.anim .gold-line{background-size:220% 100%;background-image:linear-gradient(100deg,var(--gold-3) 0%,var(--gold-2) 25%,#fff6cf 50%,var(--gold-2) 75%,var(--gold-3) 100%);animation:fadeUp .9s ease forwards 1.5s,shimmer 4.5s linear infinite 2.4s}
+html.anim .gold-line{background-size:220% 100%;background-image:linear-gradient(100deg,var(--gold-3) 0%,var(--gold-2) 25%,#fff6cf 50%,var(--gold-2) 75%,var(--gold-3) 100%);animation:fadeUp .9s ease forwards .5s,shimmer 4.5s linear infinite 1.2s}
 @keyframes shimmer{to{background-position:-220% 0}}
 .rotator{margin:-6px 0 22px;font-weight:600;color:var(--gold-2);min-height:1.6em;letter-spacing:.02em}
 .rotator span{display:inline-block;transition:opacity .45s,transform .45s}
@@ -153,3 +153,5 @@ html,body{overflow-x:clip}
   .hero-badges strong{font-size:1.5rem}
   .hero-badges span{font-size:.62rem;letter-spacing:.04em;display:block;line-height:1.3}
 }
+
+/* Admin : tout reste visible (pas de défilement horizontal) */

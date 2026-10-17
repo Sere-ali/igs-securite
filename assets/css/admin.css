@@ -77,8 +77,8 @@ tr:hover td{background:#19191b}
 
 @media(max-width:900px){
   .adminbar{padding:10px 14px}
-  .ab-nav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
-  .nav-btn{white-space:nowrap;flex:0 0 auto}
+  .ab-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;overflow:visible}
+  .nav-btn{justify-content:center;text-align:center;white-space:normal;line-height:1.2;padding:10px 12px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .main{padding:20px 14px}
   .grid-form{grid-template-columns:1fr}
@@ -120,3 +120,11 @@ body{overflow-x:hidden}
   table.stack tr:hover td{background:transparent}
   table.stack .actions{justify-content:flex-end}
 }
+
+@media (max-width:480px){
+  .ab-nav{grid-template-columns:1fr 1fr}
+  .nav-btn{font-size:.82rem;gap:6px;padding:10px 8px}
+  .ab-me{flex-wrap:wrap;gap:8px}
+  .ab-me .btn{flex:1 1 auto;justify-content:center}
+}
+@media (max-width:340px){.ab-nav{grid-template-columns:1fr}}

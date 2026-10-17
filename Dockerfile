@@ -2,10 +2,12 @@ FROM php:8.3-apache
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends libpq-dev \
- && docker-php-ext-install pdo_pgsql \
- && a2enmod rewrite headers \
+ && docker-php-ext-install pdo_pgsql opcache \
+ && a2enmod rewrite headers deflate expires \
  && sed -ri 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf \
  && rm -rf /var/lib/apt/lists/*
+
+RUN { echo 'opcache.enable=1'; echo 'opcache.memory_consumption=64'; echo 'opcache.validate_timestamps=0'; echo 'opcache.max_accelerated_files=2000'; } > /usr/local/etc/php/conf.d/opcache.ini
 
 WORKDIR /var/www/html
 COPY . /var/www/html/

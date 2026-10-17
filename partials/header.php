@@ -22,7 +22,13 @@ $nav = [
 <title><?= e($pageTitle) ?></title>
 <meta name="description" content="<?= e($pageDesc) ?>">
 <meta name="theme-color" content="#0a0a0a">
-<link rel="icon" href="<?= $B ?>/assets/img/logo.jpeg">
+<link rel="icon" type="image/png" sizes="48x48" href="<?= $B ?>/assets/icons/favicon-48.png">
+<link rel="manifest" href="<?= $B ?>/manifest.webmanifest">
+<link rel="apple-touch-icon" href="<?= $B ?>/assets/icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="IGS Sécurité">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,6 +47,7 @@ $nav = [
         <a href="<?= $B . '/' . $href ?>" class="<?= $active === $k ? 'on' : '' ?>"><?= e($label) ?></a>
       <?php endforeach; ?>
       <a class="btn btn-sm menu-cta" href="<?= $B ?>/contact.php#devis">Devis gratuit</a>
+      <button type="button" class="btn btn-sm btn-install" data-install>📲 Télécharger l'app</button>
     </nav>
   </div>
 </header>

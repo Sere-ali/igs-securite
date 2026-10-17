@@ -5,6 +5,7 @@
     <div>
       <img src="<?= $B ?>/assets/img/logo.jpeg" alt="IGS Sécurité" class="foot-logo" width="110" height="138">
       <p class="muted">Ingénierie Globale de Sûreté — protection physique, sécurité électronique et cyberdéfense.</p>
+      <button type="button" class="btn btn-sm btn-install" data-install>📲 Télécharger l'application</button>
     </div>
     <div>
       <h4>Navigation</h4>
@@ -44,6 +45,23 @@
   <a class="fab fab-wa" href="https://wa.me/225<?= e($wa) ?>" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
   <a class="fab fab-call" href="<?= tel_link($p1) ?>" aria-label="Appeler IGS Sécurité">📞</a>
 </div>
+<div class="modal" id="install-modal" role="dialog" aria-modal="true" aria-labelledby="im-title">
+  <div class="modal-box">
+    <button class="modal-close" type="button" aria-label="Fermer" data-close>&times;</button>
+    <h3 id="im-title">Installer l'application</h3>
+    <div id="im-ios" hidden>
+      <p>Sur iPhone / iPad (Safari) :</p>
+      <ol><li>Touchez le bouton <strong>Partager</strong> (carré avec une flèche) en bas de l'écran.</li><li>Choisissez <strong>« Sur l'écran d'accueil »</strong>.</li><li>Touchez <strong>Ajouter</strong>.</li></ol>
+    </div>
+    <div id="im-other" hidden>
+      <p>Depuis votre navigateur :</p>
+      <ol><li>Ouvrez le menu du navigateur (⋮ ou ⋯).</li><li>Choisissez <strong>« Installer l'application »</strong> ou <strong>« Ajouter à l'écran d'accueil »</strong>.</li><li>Confirmez.</li></ol>
+      <p class="muted small">Sur Android, utilisez Chrome. Sur iPhone, utilisez Safari.</p>
+    </div>
+    <button type="button" class="btn btn-block" data-close>Compris</button>
+  </div>
+</div>
+<script>window.IGS_BASE=<?= json_encode($B) ?>;</script>
 <script src="<?= $B ?>/assets/js/main.js" defer></script>
 </body>
 </html>

@@ -98,12 +98,23 @@ $catText  = [
       <h2>Nos équipes en action</h2>
     </div>
     <div class="gallery">
-      <figure class="reveal"><img src="<?= $B ?>/assets/img/agents-portail.jpeg" alt="Agents IGS Sécurité devant le portail d'une résidence" loading="lazy"><figcaption>Résidences & villas<small>Gardiennage jour et nuit</small></figcaption></figure>
-      <figure class="reveal"><img src="<?= $B ?>/assets/img/chef-equipe.jpeg" alt="Chef d'équipe IGS Sécurité et moto d'intervention" loading="lazy"><figcaption>Chef d'équipe & intervention<small>Moto prête à partir</small></figcaption></figure>
-      <figure class="reveal"><img src="<?= $B ?>/assets/img/patrouille-moto.jpeg" alt="Patrouille motorisée IGS Sécurité devant une gare" loading="lazy"><figcaption>Gares & lieux publics<small>Patrouilles motorisées</small></figcaption></figure>
-      <figure class="reveal"><img src="<?= $B ?>/assets/img/ecole-lakota.jpg" alt="Agents IGS Sécurité devant une école primaire, entourés d'élèves" loading="lazy"><figcaption>Établissements scolaires<small>Sécurité des élèves à l'entrée et à la sortie</small></figcaption></figure>
+      <figure class="reveal g-agents"><img src="<?= $B ?>/assets/img/agents-portail.jpeg" alt="Agents IGS Sécurité devant le portail d'une résidence" loading="lazy"><figcaption>Résidences & villas<small>Gardiennage jour et nuit</small></figcaption></figure>
+      <figure class="reveal g-chef"><img src="<?= $B ?>/assets/img/chef-equipe.jpeg" alt="Chef d'équipe IGS Sécurité et moto d'intervention" loading="lazy"><figcaption>Chef d'équipe & intervention<small>Moto prête à partir</small></figcaption></figure>
+      <figure class="reveal g-moto"><img src="<?= $B ?>/assets/img/patrouille-moto.jpeg" alt="Patrouille motorisée IGS Sécurité devant une gare" loading="lazy"><figcaption>Gares & lieux publics<small>Patrouilles motorisées</small></figcaption></figure>
+      <figure class="reveal g-ecole"><img src="<?= $B ?>/assets/img/ecole-lakota.jpg" alt="Agents IGS Sécurité devant une école primaire, entourés d'élèves" loading="lazy"><figcaption>Établissements scolaires<small>Sécurité des élèves à l'entrée et à la sortie</small></figcaption></figure>
     </div>
     <p class="muted center small" style="margin-top:14px">Visuels d’illustration.</p>
+  </div>
+</section>
+
+<section class="install-band" data-install-section>
+  <div class="wrap install-in">
+    <img src="<?= $B ?>/assets/icons/icon-192.png" alt="Icône application IGS Sécurité" width="84" height="84">
+    <div class="txt">
+      <h2>Installez l'application IGS Sécurité</h2>
+      <p>Accédez à nos services et appelez-nous en un geste, directement depuis l'écran d'accueil de votre téléphone. Gratuit, sans passer par un store.</p>
+    </div>
+    <button type="button" class="btn" data-install>📲 Télécharger l'application</button>
   </div>
 </section>
 

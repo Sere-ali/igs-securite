@@ -22,34 +22,29 @@ $superItems = [
 <title><?= e($adminTitle ?? 'Administration') ?> — IGS Sécurité</title>
 <link rel="stylesheet" href="<?= $B ?>/assets/css/admin.css"></head>
 <body>
-<div class="layout">
-  <aside class="side" id="side">
-    <div class="brand"><img src="<?= $B ?>/assets/img/logo.jpeg" alt=""><span>IGS ADMIN</span></div>
-    <nav>
-      <?php foreach ($items as $k => [$ic, $lb, $href]): ?>
-        <a href="<?= $B ?>/admin/<?= $href ?>" class="<?= ($adminActive ?? '') === $k ? 'on' : '' ?>"><?= $ic ?> <?= e($lb) ?>
-          <?php if ($k === 'messages' && $newCount): ?><span class="badge b-nouveau" style="margin-left:auto"><?= $newCount ?></span><?php endif; ?></a>
+<header class="adminbar">
+  <div class="ab-row">
+    <a class="ab-brand" href="<?= $B ?>/admin/index.php"><img src="<?= $B ?>/assets/img/logo.jpeg" alt=""><span>IGS ADMIN</span></a>
+    <div class="ab-me">
+      <span class="role <?= $isSuper ? '' : 'admin' ?>"><?= $isSuper ? 'SUPER ADMIN' : 'ADMIN' ?></span>
+      <span class="ab-name"><?= e($me['name']) ?></span>
+      <a class="btn sm ghost" href="<?= $B ?>/index.php" target="_blank">🌐 Voir le site</a>
+      <a class="btn sm danger" href="<?= $B ?>/admin/logout.php">🚪 Déconnexion</a>
+    </div>
+  </div>
+  <nav class="ab-nav" aria-label="Navigation administration">
+    <?php foreach ($items as $k => [$ic, $lb, $href]): ?>
+      <a href="<?= $B ?>/admin/<?= $href ?>" class="nav-btn <?= ($adminActive ?? '') === $k ? 'on' : '' ?>"><?= $ic ?> <?= e($lb) ?>
+        <?php if ($k === 'messages' && $newCount): ?><span class="badge b-nouveau"><?= $newCount ?></span><?php endif; ?></a>
+    <?php endforeach; ?>
+    <?php if ($isSuper): ?>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <?php foreach ($superItems as $k => [$ic, $lb, $href]): ?>
+        <a href="<?= $B ?>/admin/<?= $href ?>" class="nav-btn super <?= ($adminActive ?? '') === $k ? 'on' : '' ?>"><?= $ic ?> <?= e($lb) ?></a>
       <?php endforeach; ?>
-      <?php if ($isSuper): ?>
-        <div class="sep">Super administrateur</div>
-        <?php foreach ($superItems as $k => [$ic, $lb, $href]): ?>
-          <a href="<?= $B ?>/admin/<?= $href ?>" class="<?= ($adminActive ?? '') === $k ? 'on' : '' ?>"><?= $ic ?> <?= e($lb) ?></a>
-        <?php endforeach; ?>
-      <?php endif; ?>
-      <div class="sep">Liens</div>
-      <a href="<?= $B ?>/index.php" target="_blank">🌐 Voir le site</a>
-      <a href="<?= $B ?>/admin/logout.php">🚪 Déconnexion</a>
-    </nav>
-    <div class="me">
-      <span class="role <?= $isSuper ? '' : 'admin' ?>"><?= $isSuper ? 'SUPER ADMIN' : 'ADMIN' ?></span><br>
-      <strong><?= e($me['name']) ?></strong><br><span class="muted"><?= e($me['email']) ?></span>
-    </div>
-  </aside>
-  <div class="main">
-    <div class="top">
-      <div>
-        <button class="btn sm ghost menu-toggle" onclick="document.getElementById('side').classList.toggle('open')">☰ Menu</button>
-        <h1><?= e($adminTitle ?? '') ?></h1>
-      </div>
-    </div>
-    <?php if ($f = flash()): ?><div class="alert <?= $f[1] === 'err' ? 'err' : 'ok' ?>"><?= e($f[0]) ?></div><?php endif; ?>
+    <?php endif; ?>
+  </nav>
+</header>
+<div class="main">
+  <div class="top"><h1><?= e($adminTitle ?? '') ?></h1></div>
+  <?php if ($f = flash()): ?><div class="alert <?= $f[1] === 'err' ? 'err' : 'ok' ?>"><?= e($f[0]) ?></div><?php endif; ?>

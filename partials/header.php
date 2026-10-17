@@ -29,16 +29,6 @@ $nav = [
 <link rel="stylesheet" href="<?= $B ?>/assets/css/style.css">
 </head>
 <body>
-<div class="topbar">
-  <div class="wrap topbar-in">
-    <span class="tb-item">🕒 <?= e(setting('hours', '24h/24 – 7j/7')) ?></span>
-    <span class="tb-item tb-mail">✉️ <a href="mailto:<?= e($mail) ?>"><?= e($mail) ?></a></span>
-    <span class="tb-phones">
-      <a class="tb-call" href="<?= tel_link($p1) ?>">📞 +225 <?= e($p1) ?></a>
-      <a class="tb-call alt" href="<?= tel_link($p2) ?>">+225 <?= e($p2) ?></a>
-    </span>
-  </div>
-</div>
 <header class="site-header" id="top">
   <div class="wrap head-in">
     <a class="brand" href="<?= $B ?>/index.php" aria-label="IGS Sécurité — accueil">

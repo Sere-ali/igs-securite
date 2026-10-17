@@ -1,6 +1,5 @@
 Options -Indexes
 DirectorySlash Off
-UseCanonicalName Off
 <FilesMatch "^(config\.php|Dockerfile|render\.yaml|README\.md)$">
   Require all denied
 </FilesMatch>

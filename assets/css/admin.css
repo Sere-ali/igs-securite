@@ -128,3 +128,10 @@ body{overflow-x:hidden}
   .ab-me .btn{flex:1 1 auto;justify-content:center}
 }
 @media (max-width:340px){.ab-nav{grid-template-columns:1fr}}
+
+/* Œil mot de passe */
+.pw-wrap{position:relative;display:block}
+.pw-wrap input{padding-right:52px!important;width:100%}
+.pw-eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:42px;height:42px;display:grid;place-items:center;background:transparent;border:0;border-radius:10px;color:var(--gold);cursor:pointer;touch-action:manipulation}
+.pw-eye:hover,.pw-eye:focus-visible{background:rgba(232,185,35,.14);outline:none}
+.pw-eye[aria-pressed="true"]{color:var(--gold-2)}

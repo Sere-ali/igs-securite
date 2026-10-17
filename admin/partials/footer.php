@@ -9,4 +9,5 @@ document.querySelectorAll('.table-wrap table').forEach(function (t) {
   });
 });
 </script>
+<script src="<?= $B ?>/assets/js/pwd-eye.js"></script>
 </body></html>

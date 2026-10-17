@@ -49,4 +49,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button class="btn" type="submit">Se connecter</button>
   </form>
   <p class="small muted" style="margin-top:16px"><a href="<?= $B ?>/">← Retour au site</a></p>
+<script src="<?= $B ?>/assets/js/pwd-eye.js"></script>
 </main></body></html>

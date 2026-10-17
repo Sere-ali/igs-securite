@@ -152,4 +152,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <button class="btn" type="submit">Installer</button>
     </form>
   <?php endif; ?>
+<script src="assets/js/pwd-eye.js"></script>
 </main></body></html>

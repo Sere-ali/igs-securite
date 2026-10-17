@@ -23,7 +23,7 @@ $recent = $pdo->query('SELECT * FROM messages ORDER BY created_at DESC LIMIT 6')
         <td><a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $m['phone'])) ?>"><?= e($m['phone']) ?></a></td>
         <td><?= e($m['service'] ?: '—') ?></td>
         <td><span class="badge b-<?= e($m['status']) ?>"><?= e($m['status']) ?></span></td>
-        <td><a class="btn sm ghost" href="messages.php?view=<?= (int)$m['id'] ?>">Ouvrir</a></td>
+        <td><a class="btn sm ghost" href="messages?view=<?= (int)$m['id'] ?>">Ouvrir</a></td>
       </tr>
     <?php endforeach; ?>
   </table></div>
@@ -32,7 +32,7 @@ $recent = $pdo->query('SELECT * FROM messages ORDER BY created_at DESC LIMIT 6')
 <?php if ($isSuper): ?>
 <div class="panel">
   <h2>Équipe</h2>
-  <p class="muted"><?= $count("SELECT COUNT(*) FROM users WHERE role='admin' AND active=1") ?> administrateur(s) actif(s). <a href="users.php">Gérer les administrateurs →</a></p>
+  <p class="muted"><?= $count("SELECT COUNT(*) FROM users WHERE role='admin' AND active=1") ?> administrateur(s) actif(s). <a href="users">Gérer les administrateurs →</a></p>
 </div>
 <?php endif; ?>
 <?php require __DIR__ . '/partials/footer.php'; ?>

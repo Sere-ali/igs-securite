@@ -32,7 +32,7 @@ require __DIR__ . '/partials/header.php';
     <h2>Écoles, résidences, gares : une présence adaptée à chaque lieu</h2>
     <p>Aux abords des <strong>établissements scolaires</strong>, nos agents sécurisent l'entrée et la sortie des élèves, orientent les parents et veillent sur les enfants avec calme et bienveillance.</p>
     <p>Dans les <strong>résidences et quartiers</strong>, gardiennage, rondes et contrôle d'accès assurent la tranquillité des familles. Dans les <strong>gares et lieux très fréquentés</strong>, nos patrouilles motorisées interviennent en quelques instants.</p>
-    <a class="btn btn-ghost" href="<?= $B ?>/services.php">Voir nos services →</a>
+    <a class="btn btn-ghost" href="<?= $B ?>/services">Voir nos services →</a>
   </div>
 </div></section>
 
@@ -47,6 +47,6 @@ require __DIR__ . '/partials/header.php';
 </div></section>
 <section class="cta-band"><div class="wrap cta-in reveal">
   <div><h2>Parlons de votre sécurité</h2><p>Devis gratuit et sans engagement.</p></div>
-  <div class="cta-row"><a class="btn btn-dark" href="<?= $B ?>/contact.php#devis">Demander un devis</a></div>
+  <div class="cta-row"><a class="btn btn-dark" href="<?= $B ?>/contact#devis">Demander un devis</a></div>
 </div></section>
 <?php require __DIR__ . '/partials/footer.php'; ?>

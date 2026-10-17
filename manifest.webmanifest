@@ -4,7 +4,7 @@
   "description": "Sécurité privée globale : protection physique, sécurité électronique et cyberdéfense. Chaque seconde compte.",
   "lang": "fr",
   "dir": "ltr",
-  "start_url": "index.php?source=pwa",
+  "start_url": "./?source=pwa",
   "scope": "./",
   "id": "./",
   "display": "standalone",
@@ -18,7 +18,7 @@
     { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
   "shortcuts": [
-    { "name": "Demander un devis", "short_name": "Devis", "url": "contact.php#devis", "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }] },
-    { "name": "Nos services", "short_name": "Services", "url": "services.php", "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }] }
+    { "name": "Demander un devis", "short_name": "Devis", "url": "contact#devis", "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Nos services", "short_name": "Services", "url": "services", "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }] }
   ]
 }

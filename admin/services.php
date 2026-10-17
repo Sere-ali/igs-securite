@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->prepare('DELETE FROM services WHERE id=?')->execute([$id]);
         log_action('Service supprimé', '#' . $id); flash('Service supprimé.');
     }
-    header('Location: services.php'); exit;
+    header('Location: services'); exit;
 }
 
 $adminRole = null; $adminActive = 'services'; $adminTitle = 'Gestion des services';
@@ -54,7 +54,7 @@ $rows = $pdo->query('SELECT * FROM services ORDER BY sort_order, id')->fetchAll(
     <label><span><input type="checkbox" name="active" <?= $edit['active'] ? 'checked' : '' ?>> Visible sur le site</span></label>
     <div class="full actions">
       <button class="btn" type="submit"><?= $edit['id'] ? 'Enregistrer' : 'Ajouter' ?></button>
-      <?php if ($edit['id']): ?><a class="btn ghost" href="services.php">Annuler</a><?php endif; ?>
+      <?php if ($edit['id']): ?><a class="btn ghost" href="services">Annuler</a><?php endif; ?>
     </div>
   </form>
 </div>

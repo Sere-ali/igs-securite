@@ -37,7 +37,7 @@
   </div>
   <div class="wrap foot-bottom">
     <span>© <?= date('Y') ?> I.G.S Sécurité — Tous droits réservés.</span>
-    <a href="<?= $B ?>/admin/login.php" class="admin-link">Espace administration</a>
+    <a href="<?= $B ?>/admin/login" class="admin-link">Espace administration</a>
   </div>
 </footer>
 

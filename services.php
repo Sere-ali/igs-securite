@@ -22,7 +22,7 @@ try {
         <div class="ico"><?= e($s['icon']) ?></div>
         <h3><?= e($s['title']) ?></h3>
         <p><?= e($s['description']) ?></p>
-        <a class="more" href="<?= $B ?>/contact.php?service=<?= urlencode($s['title']) ?>#devis">Demander un devis →</a>
+        <a class="more" href="<?= $B ?>/contact?service=<?= urlencode($s['title']) ?>#devis">Demander un devis →</a>
       </article>
     <?php endforeach; ?>
   </div>
@@ -31,6 +31,6 @@ try {
 
 <section class="cta-band"><div class="wrap cta-in reveal">
   <div><h2>Un besoin spécifique ?</h2><p>Nous construisons une solution sur mesure.</p></div>
-  <div class="cta-row"><a class="btn btn-dark" href="<?= $B ?>/contact.php#devis">Demander un devis gratuit</a></div>
+  <div class="cta-row"><a class="btn btn-dark" href="<?= $B ?>/contact#devis">Demander un devis gratuit</a></div>
 </div></section>
 <?php require __DIR__ . '/partials/footer.php'; ?>

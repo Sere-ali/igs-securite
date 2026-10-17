@@ -6,15 +6,15 @@ $B = base_url();
 $isSuper = $me['role'] === 'superadmin';
 $newCount = (int)db()->query("SELECT COUNT(*) FROM messages WHERE status='nouveau'")->fetchColumn();
 $items = [
-  'dashboard' => ['📊', 'Tableau de bord', 'index.php'],
-  'messages'  => ['✉️', 'Demandes & messages', 'messages.php'],
-  'services'  => ['🛡️', 'Services', 'services.php'],
-  'profile'   => ['👤', 'Mon compte', 'profile.php'],
+  'dashboard' => ['📊', 'Tableau de bord', './'],
+  'messages'  => ['✉️', 'Demandes & messages', 'messages'],
+  'services'  => ['🛡️', 'Services', 'services'],
+  'profile'   => ['👤', 'Mon compte', 'profile'],
 ];
 $superItems = [
-  'users'    => ['👥', 'Administrateurs', 'users.php'],
-  'settings' => ['⚙️', 'Paramètres du site', 'settings.php'],
-  'logs'     => ['📜', 'Journal d\'activité', 'logs.php'],
+  'users'    => ['👥', 'Administrateurs', 'users'],
+  'settings' => ['⚙️', 'Paramètres du site', 'settings'],
+  'logs'     => ['📜', 'Journal d\'activité', 'logs'],
 ];
 ?><!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -24,12 +24,12 @@ $superItems = [
 <body>
 <header class="adminbar">
   <div class="ab-row">
-    <a class="ab-brand" href="<?= $B ?>/admin/index.php"><img src="<?= $B ?>/assets/img/logo.jpeg" alt=""><span>IGS ADMIN</span></a>
+    <a class="ab-brand" href="<?= $B ?>/admin/"><img src="<?= $B ?>/assets/img/logo.jpeg" alt=""><span>IGS ADMIN</span></a>
     <div class="ab-me">
       <span class="role <?= $isSuper ? '' : 'admin' ?>"><?= $isSuper ? 'SUPER ADMIN' : 'ADMIN' ?></span>
       <span class="ab-name"><?= e($me['name']) ?></span>
-      <a class="btn sm ghost" href="<?= $B ?>/index.php" target="_blank">🌐 Voir le site</a>
-      <a class="btn sm danger" href="<?= $B ?>/admin/logout.php">🚪 Déconnexion</a>
+      <a class="btn sm ghost" href="<?= $B ?>/" target="_blank">🌐 Voir le site</a>
+      <a class="btn sm danger" href="<?= $B ?>/admin/logout">🚪 Déconnexion</a>
     </div>
   </div>
   <nav class="ab-nav" aria-label="Navigation administration">

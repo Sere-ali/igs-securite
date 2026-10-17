@@ -24,13 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->prepare('UPDATE messages SET status=?, note=? WHERE id=?')->execute([$_POST['status'], trim($_POST['note'] ?? '') ?: null, $id]);
         log_action('Message #' . $id, 'statut → ' . $_POST['status']);
         flash('Demande mise à jour.');
-        header('Location: messages.php?view=' . $id); exit;
+        header('Location: messages?view=' . $id); exit;
     }
     if ($act === 'delete') {
         $pdo->prepare('DELETE FROM messages WHERE id=?')->execute([$id]);
         log_action('Message supprimé', '#' . $id);
         flash('Demande supprimée.');
-        header('Location: messages.php'); exit;
+        header('Location: messages'); exit;
     }
 }
 
@@ -48,7 +48,7 @@ if (isset($_GET['view'])):
             $m['status'] = 'lu';
         }
 ?>
-<p><a href="messages.php">← Retour à la liste</a></p>
+<p><a href="messages">← Retour à la liste</a></p>
 <div class="panel">
   <h2><?= e($m['name']) ?> <span class="badge b-<?= e($m['status']) ?>"><?= e($m['status']) ?></span></h2>
   <p class="muted small">Reçue le <?= e(date('d/m/Y à H:i', strtotime($m['created_at']))) ?> — IP <?= e($m['ip']) ?></p>
@@ -82,7 +82,7 @@ else:
     $pages = max(1, (int)ceil($total / $per));
 ?>
 <div class="filters">
-  <a href="messages.php" class="<?= $filter === '' ? 'on' : '' ?>">Toutes</a>
+  <a href="messages" class="<?= $filter === '' ? 'on' : '' ?>">Toutes</a>
   <a href="?s=nouveau" class="<?= $filter === 'nouveau' ? 'on' : '' ?>">Nouvelles</a>
   <a href="?s=lu" class="<?= $filter === 'lu' ? 'on' : '' ?>">Lues</a>
   <a href="?s=traite" class="<?= $filter === 'traite' ? 'on' : '' ?>">Traitées</a>

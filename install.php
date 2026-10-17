@@ -1,7 +1,7 @@
 <?php
 /**
  * Installation : crée les tables, les services par défaut et le compte SUPER ADMINISTRATEUR.
- * À lancer UNE fois : https://votre-site/install.php?key=VOTRE_INSTALL_KEY
+ * À lancer UNE fois : https://votre-site/install?key=VOTRE_INSTALL_KEY
  * Se verrouille automatiquement dès qu'un compte existe en base.
  */
 require_once __DIR__ . '/includes/bootstrap.php';
@@ -20,7 +20,7 @@ if (INSTALL_KEY === '') {
 }
 if (!hash_equals(INSTALL_KEY, (string)($_GET['key'] ?? $_POST['key'] ?? ''))) {
     http_response_code(403);
-    exit("Clé d'installation invalide. Utilisez /install.php?key=VOTRE_INSTALL_KEY");
+    exit("Clé d'installation invalide. Utilisez /install?key=VOTRE_INSTALL_KEY");
 }
 
 $error = '';
@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <?php if ($done): ?>
     <h1>Installation terminée ✅</h1>
     <p>Le compte super administrateur est créé. La page d'installation est maintenant verrouillée.</p>
-    <a class="btn" href="admin/login.php">Aller à la connexion</a>
+    <a class="btn" href="admin/login">Aller à la connexion</a>
   <?php else: ?>
     <h1>Installation</h1>
     <p class="muted">Création de la base et du compte super administrateur.</p>

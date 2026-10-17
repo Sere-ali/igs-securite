@@ -19,4 +19,13 @@ Options -Indexes
   RewriteEngine On
   RewriteCond %{HTTP:X-Forwarded-Proto} =http
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+  # URLs propres : /contact au lieu de /contact.php
+  RewriteCond %{THE_REQUEST} \s/(.*/)?index\.php[\s?]
+  RewriteRule ^(.*/)?index\.php$ /$1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/(.+)\.php[\s?]
+  RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
 </IfModule>

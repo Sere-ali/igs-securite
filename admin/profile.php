@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         log_action('Mot de passe modifié');
         flash('Mot de passe modifié.');
     }
-    header('Location: profile.php'); exit;
+    header('Location: profile'); exit;
 }
 
 $adminRole = null; $adminActive = 'profile'; $adminTitle = 'Mon compte';

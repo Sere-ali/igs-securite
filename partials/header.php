@@ -8,11 +8,11 @@ $p1 = setting('phone1', '05 96 96 66 67');
 $p2 = setting('phone2', '01 73 05 13 86');
 $mail = setting('email', 'igssecurite10@gmail.com');
 $nav = [
-  'home'     => ['Accueil', 'index.php'],
-  'about'    => ['À Propos', 'a-propos.php'],
-  'services' => ['Nos Services', 'services.php'],
-  'conseil'  => ['Conseil & Audit', 'conseil.php'],
-  'contact'  => ['Contact', 'contact.php'],
+  'home'     => ['Accueil', ''],
+  'about'    => ['À Propos', 'a-propos'],
+  'services' => ['Nos Services', 'services'],
+  'conseil'  => ['Conseil & Audit', 'conseil'],
+  'contact'  => ['Contact', 'contact'],
 ];
 ?><!doctype html>
 <html lang="fr">
@@ -39,7 +39,7 @@ $nav = [
 <body>
 <header class="site-header" id="top">
   <div class="wrap head-in">
-    <a class="brand" href="<?= $B ?>/index.php" aria-label="IGS Sécurité — accueil">
+    <a class="brand" href="<?= $B ?>/" aria-label="IGS Sécurité — accueil">
       <img src="<?= $B ?>/assets/img/logo.jpeg" alt="Blason IGS Sécurité" width="56" height="70">
       <span class="brand-txt"><strong>I.G.S SÉCURITÉ</strong><small>Chaque seconde compte</small></span>
     </a>
@@ -48,7 +48,7 @@ $nav = [
       <?php foreach ($nav as $k => [$label, $href]): ?>
         <a href="<?= $B . '/' . $href ?>" class="<?= $active === $k ? 'on' : '' ?>"><?= e($label) ?></a>
       <?php endforeach; ?>
-      <a class="btn btn-sm menu-cta" href="<?= $B ?>/contact.php#devis">Devis gratuit</a>
+      <a class="btn btn-sm menu-cta" href="<?= $B ?>/contact#devis">Devis gratuit</a>
       <button type="button" class="btn btn-sm btn-install" data-install>📲 Télécharger l'app</button>
     </nav>
   </div>

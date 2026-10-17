@@ -20,8 +20,8 @@ $catText  = [
       <h1>IGS SÉCURITÉ<span class="gold-line"><?= e(setting('hero_title', 'Ingénierie Globale de Sûreté')) ?></span></h1>
       <p class="lead"><?= e(setting('hero_text', 'Protection Physique, Sécurité Électronique & Cyberdéfense.')) ?></p>
       <div class="cta-row">
-        <a class="btn" href="<?= $B ?>/contact.php#devis">📞 Demander un Devis Gratuit</a>
-        <a class="btn btn-ghost" href="<?= $B ?>/services.php">🛡️ Découvrir nos Services</a>
+        <a class="btn" href="<?= $B ?>/contact#devis">📞 Demander un Devis Gratuit</a>
+        <a class="btn btn-ghost" href="<?= $B ?>/services">🛡️ Découvrir nos Services</a>
       </div>
       <ul class="hero-badges">
         <li><strong>24/7</strong><span>Disponibilité</span></li>
@@ -49,7 +49,7 @@ $catText  = [
       <h2>Une sûreté pensée de bout en bout</h2>
       <p>IGS Sécurité (Ingénierie Globale de Sûreté) est une entreprise spécialisée dans la sécurité privée globale. Nous combinons la présence humaine qualifiée, l'innovation technologique électronique et la sécurité des réseaux informatiques pour offrir une couverture complète aux entreprises, institutions et particuliers.</p>
       <p>Implantés à Anyama (Boulevard du Stade Olympique), nos équipes interviennent avec rigueur, discrétion et réactivité sur l'ensemble du territoire.</p>
-      <a class="btn btn-ghost" href="<?= $B ?>/a-propos.php">En savoir plus →</a>
+      <a class="btn btn-ghost" href="<?= $B ?>/a-propos">En savoir plus →</a>
     </div>
     <div class="photo-card reveal">
       <img src="<?= $B ?>/assets/img/agents-portail.jpeg" alt="Agents IGS Sécurité devant un portail de résidence" loading="lazy">
@@ -65,7 +65,7 @@ $catText  = [
     </div>
     <div class="grid-4">
       <?php foreach ($cats as $c): $n = $c['category']; ?>
-        <a class="card cat reveal" href="<?= $B ?>/services.php#<?= e(md5($n)) ?>">
+        <a class="card cat reveal" href="<?= $B ?>/services#<?= e(md5($n)) ?>">
           <div class="ico"><?= $catIcons[$n] ?? '🛡️' ?></div>
           <h3><?= e($n) ?></h3>
           <p><?= e($catText[$n] ?? '') ?></p>
@@ -126,7 +126,7 @@ $catText  = [
     </div>
     <div class="cta-row">
       <a class="btn btn-dark" href="<?= tel_link($p1) ?>">📞 +225 <?= e($p1) ?></a>
-      <a class="btn btn-ghost-dark" href="<?= $B ?>/contact.php#devis">Écrire un message</a>
+      <a class="btn btn-ghost-dark" href="<?= $B ?>/contact#devis">Écrire un message</a>
     </div>
   </div>
 </section>

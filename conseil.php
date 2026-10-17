@@ -47,6 +47,6 @@ require __DIR__ . '/partials/header.php';
 </div></section>
 <section class="cta-band"><div class="wrap cta-in reveal">
   <div><h2>Planifiez votre audit</h2><p>Première prise de contact gratuite.</p></div>
-  <div class="cta-row"><a class="btn btn-dark" href="<?= $B ?>/contact.php?service=Conseil+%26+Audit+de+S%C3%A9curit%C3%A9#devis">Demander un audit</a></div>
+  <div class="cta-row"><a class="btn btn-dark" href="<?= $B ?>/contact?service=Conseil+%26+Audit+de+S%C3%A9curit%C3%A9#devis">Demander un audit</a></div>
 </div></section>
 <?php require __DIR__ . '/partials/footer.php'; ?>

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../includes/bootstrap.php';
 $B = base_url();
-if (current_user()) { header('Location: ' . $B . '/admin/index.php'); exit; }
+if (current_user()) { header('Location: ' . $B . '/admin/'); exit; }
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->prepare('UPDATE users SET last_login=NOW() WHERE id=?')->execute([$u['id']]);
             $pdo->prepare('DELETE FROM login_attempts WHERE ip=?')->execute([$ip]);
             log_action('Connexion', $u['email']);
-            header('Location: ' . $B . '/admin/index.php'); exit;
+            header('Location: ' . $B . '/admin/'); exit;
         }
         $pdo->prepare('INSERT INTO login_attempts (ip) VALUES (?)')->execute([$ip]);
         log_action('Échec de connexion', $email);
@@ -48,5 +48,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label>Mot de passe<input type="password" name="password" required autocomplete="current-password"></label>
     <button class="btn" type="submit">Se connecter</button>
   </form>
-  <p class="small muted" style="margin-top:16px"><a href="<?= $B ?>/index.php">← Retour au site</a></p>
+  <p class="small muted" style="margin-top:16px"><a href="<?= $B ?>/">← Retour au site</a></p>
 </main></body></html>

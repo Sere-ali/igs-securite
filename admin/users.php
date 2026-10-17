@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             log_action('Mot de passe réinitialisé', '#' . $id); flash('Mot de passe réinitialisé.');
         }
     }
-    header('Location: users.php'); exit;
+    header('Location: users'); exit;
 }
 
 $adminRole = 'superadmin'; $adminActive = 'users'; $adminTitle = 'Administrateurs';

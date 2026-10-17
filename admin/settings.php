@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($keys as $k) $st->execute([$k, trim($_POST[$k] ?? '')]);
     log_action('Paramètres modifiés');
     flash('Paramètres enregistrés.');
-    header('Location: settings.php'); exit;
+    header('Location: settings'); exit;
 }
 
 $adminRole = 'superadmin'; $adminActive = 'settings'; $adminTitle = 'Paramètres du site';

@@ -76,7 +76,7 @@ function current_user(): ?array {
 /** $role = null (tout admin) ou 'superadmin' */
 function require_login(?string $role = null): array {
     $u = current_user();
-    if (!$u) { header('Location: ' . base_url() . '/admin/login.php'); exit; }
+    if (!$u) { header('Location: ' . base_url() . '/admin/login'); exit; }
     if ($role === 'superadmin' && $u['role'] !== 'superadmin') {
         http_response_code(403);
         exit('Accès réservé au super administrateur.');

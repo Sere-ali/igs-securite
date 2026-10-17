@@ -1,4 +1,6 @@
 Options -Indexes
+DirectorySlash Off
+UseCanonicalName Off
 <FilesMatch "^(config\.php|Dockerfile|render\.yaml|README\.md)$">
   Require all denied
 </FilesMatch>
@@ -21,9 +23,12 @@ Options -Indexes
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
   # URLs propres : /contact au lieu de /contact.php
   RewriteCond %{THE_REQUEST} \s/(.*/)?index\.php[\s?]
-  RewriteRule ^(.*/)?index\.php$ /$1 [R=301,L]
+  RewriteRule ^(.*/)?index\.php$ https://%{HTTP_HOST}/$1 [R=301,L]
   RewriteCond %{THE_REQUEST} \s/(.+)\.php[\s?]
-  RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+  RewriteRule ^(.+)\.php$ https://%{HTTP_HOST}/$1 [R=301,L]
+  # dossier sans slash final (ex. /admin) -> /admin/ sans port interne
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.*[^/])$ https://%{HTTP_HOST}/$1/ [R=301,L]
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.php -f

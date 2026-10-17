@@ -140,3 +140,16 @@ html.anim .gold-line{background-size:220% 100%;background-image:linear-gradient(
   html.anim .hero *{opacity:1!important;transform:none!important}
 }
 @media print{.intro,.scroll-bar,.hero-canvas,.to-top,.lightbox{display:none!important}}
+
+/* Anti-débordement : aucun glissement latéral ne crée de défilement horizontal */
+html,body{overflow-x:clip}
+.sec,.hero,.cta-band,.page-hero{overflow-x:clip}
+@media (max-width:900px){
+  html.anim .reveal.r-left,html.anim .reveal.r-right{transform:translateY(36px)}
+  html.anim .reveal.in{transform:none}
+}
+@media (max-width:620px){
+  .hero-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;padding-right:56px}
+  .hero-badges strong{font-size:1.5rem}
+  .hero-badges span{font-size:.62rem;letter-spacing:.04em;display:block;line-height:1.3}
+}

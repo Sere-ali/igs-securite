@@ -1,8 +1,8 @@
 /* IGS Sécurité — Service worker (mise en cache + mode hors ligne) */
-const VERSION = 'igs-v1';
+const VERSION = 'igs-v2';
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
-const CORE = ['offline.html', 'assets/css/style.css', 'assets/js/main.js', 'assets/img/logo.jpeg', 'assets/icons/icon-192.png']
+const CORE = ['offline.html', 'assets/css/style.css', 'assets/css/anim.css', 'assets/js/anim.js', 'assets/js/main.js', 'assets/img/logo.jpeg', 'assets/icons/icon-192.png']
   .map(p => new URL(p, SCOPE).href);
 
 self.addEventListener('install', e => {

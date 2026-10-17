@@ -62,6 +62,7 @@
   </div>
 </div>
 <script>window.IGS_BASE=<?= json_encode($B) ?>;</script>
-<script src="<?= $B ?>/assets/js/main.js" defer></script>
+<script src="<?= $B ?>/assets/js/anim.js?v=2" defer></script>
+<script src="<?= $B ?>/assets/js/main.js?v=2" defer></script>
 </body>
 </html>

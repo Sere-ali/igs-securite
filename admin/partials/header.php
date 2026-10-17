@@ -9,9 +9,11 @@ $items = [
   'dashboard' => ['📊', 'Tableau de bord', './'],
   'messages'  => ['✉️', 'Demandes & messages', 'messages'],
   'services'  => ['🛡️', 'Services', 'services'],
+  'cameras'   => ['📹', 'Caméras', 'cameras'],
   'profile'   => ['👤', 'Mon compte', 'profile'],
 ];
 $superItems = [
+  'camgest'  => ['🎛️', 'Gérer les caméras', 'cameras-gestion'],
   'users'    => ['👥', 'Administrateurs', 'users'],
   'settings' => ['⚙️', 'Paramètres du site', 'settings'],
   'logs'     => ['📜', 'Journal d\'activité', 'logs'],

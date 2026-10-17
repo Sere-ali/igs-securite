@@ -1,0 +1,57 @@
+<?php
+require_once __DIR__ . '/../includes/bootstrap.php';
+$B = base_url();
+$pageTitle = $pageTitle ?? 'IGS Sécurité — Ingénierie Globale de Sûreté';
+$pageDesc  = $pageDesc  ?? "IGS Sécurité : sécurité privée globale à Anyama — agents, maîtres-chiens, garde du corps, vidéosurveillance, alarmes, GPS, cybersécurité, audit et formation. Chaque seconde compte.";
+$active    = $active ?? 'home';
+$p1 = setting('phone1', '05 96 96 66 67');
+$p2 = setting('phone2', '01 73 05 13 86');
+$mail = setting('email', 'igssecurite10@gmail.com');
+$nav = [
+  'home'     => ['Accueil', 'index.php'],
+  'about'    => ['À Propos', 'a-propos.php'],
+  'services' => ['Nos Services', 'services.php'],
+  'conseil'  => ['Conseil & Audit', 'conseil.php'],
+  'contact'  => ['Contact', 'contact.php'],
+];
+?><!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title><?= e($pageTitle) ?></title>
+<meta name="description" content="<?= e($pageDesc) ?>">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="<?= $B ?>/assets/img/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<?= $B ?>/assets/css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span class="tb-item">🕒 <?= e(setting('hours', '24h/24 – 7j/7')) ?></span>
+    <span class="tb-item tb-mail">✉️ <a href="mailto:<?= e($mail) ?>"><?= e($mail) ?></a></span>
+    <span class="tb-phones">
+      <a class="tb-call" href="<?= tel_link($p1) ?>">📞 +225 <?= e($p1) ?></a>
+      <a class="tb-call alt" href="<?= tel_link($p2) ?>">+225 <?= e($p2) ?></a>
+    </span>
+  </div>
+</div>
+<header class="site-header" id="top">
+  <div class="wrap head-in">
+    <a class="brand" href="<?= $B ?>/index.php" aria-label="IGS Sécurité — accueil">
+      <img src="<?= $B ?>/assets/img/logo.jpeg" alt="Blason IGS Sécurité" width="56" height="70">
+      <span class="brand-txt"><strong>I.G.S SÉCURITÉ</strong><small>Chaque seconde compte</small></span>
+    </a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="menu">
+      <?php foreach ($nav as $k => [$label, $href]): ?>
+        <a href="<?= $B . '/' . $href ?>" class="<?= $active === $k ? 'on' : '' ?>"><?= e($label) ?></a>
+      <?php endforeach; ?>
+      <a class="btn btn-sm menu-cta" href="<?= $B ?>/contact.php#devis">Devis gratuit</a>
+    </nav>
+  </div>
+</header>
+<main>

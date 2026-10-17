@@ -83,3 +83,40 @@ tr:hover td{background:#19191b}
   .main{padding:20px 14px}
   .grid-form{grid-template-columns:1fr}
 }
+
+
+/* ===== RESPONSIVE admin ===== */
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+.btn,.nav-btn{touch-action:manipulation}
+@media (min-width:1600px){html{font-size:112.5%}.main{max-width:1500px}}
+@media (max-width:900px){
+  .ab-me{width:100%;justify-content:space-between}
+  .btn.sm{min-height:40px}
+  input,select,textarea{font-size:16px;min-height:46px}
+  .nav-btn{min-height:44px}
+}
+@media (max-width:480px){
+  .adminbar{padding:10px 12px}
+  .ab-name{display:none}
+  .ab-me{gap:8px}
+  .stats{gap:10px}.stat{padding:14px}.stat b{font-size:1.5rem}
+  .main{padding:16px 12px}
+  h1{font-size:1.3rem}
+  .panel{padding:16px}
+  .auth-card{padding:24px 18px}
+  .filters a{padding:8px 14px}
+}
+/* Tableaux : sur mobile, chaque ligne devient une carte lisible */
+@media (max-width:700px){
+  .table-wrap{overflow:visible}
+  table.stack,table.stack tbody{display:block;width:100%}
+  table.stack tr:has(th){display:none}
+  table.stack tr{display:block;background:#101011;border:1px solid var(--line);border-radius:12px;padding:6px 12px;margin-bottom:12px}
+  table.stack td{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:9px 0;border-bottom:1px solid #1d1d1f;text-align:right;word-break:break-word}
+  table.stack td:last-child{border-bottom:0}
+  table.stack td::before{content:attr(data-label);color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600;text-align:left;flex:0 0 38%}
+  table.stack td:empty::before,table.stack td[data-label=""]::before{display:none}
+  table.stack tr:hover td{background:transparent}
+  table.stack .actions{justify-content:flex-end}
+}

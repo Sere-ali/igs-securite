@@ -6,7 +6,12 @@
       var o = m.classList.toggle('open');
       b.setAttribute('aria-expanded', o ? 'true' : 'false');
     });
-    m.addEventListener('click', function (e) { if (e.target.tagName === 'A') m.classList.remove('open'); });
+    m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('click', function (e) {
+      if (m.classList.contains('open') && !m.contains(e.target) && !b.contains(e.target)) { m.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { m.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
+    window.addEventListener('resize', function () { if (window.innerWidth > 1100) { m.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
   }
 
   // Animations d'apparition au scroll
